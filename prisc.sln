@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "prisc", "prisc.vcxproj", "{70BB290C-C1D4-464D-9420-8D743D980D17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AD5CFC31-F11B-4F8F-B060-39BB6B8DE6E8}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70BB290C-C1D4-464D-9420-8D743D980D17}.Debug|x64.ActiveCfg = Debug|x64
+		{70BB290C-C1D4-464D-9420-8D743D980D17}.Debug|x64.Build.0 = Debug|x64
+		{70BB290C-C1D4-464D-9420-8D743D980D17}.Debug|x86.ActiveCfg = Debug|Win32
+		{70BB290C-C1D4-464D-9420-8D743D980D17}.Debug|x86.Build.0 = Debug|Win32
+		{70BB290C-C1D4-464D-9420-8D743D980D17}.Release|x64.ActiveCfg = Release|x64
+		{70BB290C-C1D4-464D-9420-8D743D980D17}.Release|x64.Build.0 = Release|x64
+		{70BB290C-C1D4-464D-9420-8D743D980D17}.Release|x86.ActiveCfg = Release|Win32
+		{70BB290C-C1D4-464D-9420-8D743D980D17}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94D24D9D-9768-4E90-83C6-83D427E65BC8}
+	EndGlobalSection
+EndGlobal
