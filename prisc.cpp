@@ -47,6 +47,15 @@ BOOL RemoveTitleBar(HWND hWnd)
     return TRUE;
 }
 
+// 引数の解像度でフルスクリーン化が可能かを返す
+BOOL IsFullscreenable(int width, int height) {
+    BOOL isFullHd = (width == 1920 && height == 1080);
+    BOOL isHd = (width == 1280 && height == 720);
+
+    // 解像度がフルHDまたはHDの場合のみフルスクリーン化可能
+    return (isFullHd || isHd);
+}
+
 int WINAPI wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 {
     // アプリ名
@@ -102,17 +111,34 @@ int WINAPI wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
     }
 #endif
 
+    // ウィンドウのサイズ
+    int width, height;
+    width = monitorInfoEx.rcMonitor.right - monitorInfoEx.rcMonitor.left;
+    height = monitorInfoEx.rcMonitor.bottom - monitorInfoEx.rcMonitor.top;
+
+    // フルスクリーン化可能な解像度でない場合
+    if (!IsFullscreenable(width, height)) {
+        LPCWSTR message =
+LR"(フルスクリーン化できることを確認済みの解像度は以下の2つです。
+
+・1920 x 1080
+・1280 x 720
+
+現在のディスプレイの解像度ではフルスクリーン化できない可能性があります。続行しますか？)";
+
+        int yesno = MessageBoxW(NULL, message, title, MB_YESNO | MB_ICONWARNING);
+
+        if (yesno == IDNO) {
+            return 0;
+        }
+    }
+
     // タイトルバーを取り除く
     if (RemoveTitleBar(hWndPriconne) == FALSE)
     {
         MessageBox(NULL, L"タイトルバーの削除に失敗しました", title, MB_ICONERROR);
         return 0;
     }
-
-    // ウィンドウのサイズ
-    int width, height;
-    width = monitorInfoEx.rcMonitor.right - monitorInfoEx.rcMonitor.left;
-    height = monitorInfoEx.rcMonitor.bottom - monitorInfoEx.rcMonitor.top;
 
     // ウィンドウを移動&サイズ変更
     MoveWindow(hWndPriconne, monitorInfoEx.rcMonitor.left, monitorInfoEx.rcMonitor.top, width, height, FALSE);
