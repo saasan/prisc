@@ -2,6 +2,10 @@
 
 DMM版(Windows版)プリコネRをフルスクリーン化
 
+## ダウンロード
+
+[prisc.exe](https://github.com/saasan/prisc/releases/latest/download/prisc.exe)
+
 ## 使い方
 
 1. DMM版プリコネRを起動
